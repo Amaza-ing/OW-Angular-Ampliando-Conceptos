@@ -1,6 +1,7 @@
 .article-card {
   width: 500px;
   background-color: lightgray;
+  color: black;
   border: 1px solid black;
   margin-top: 20px;
   padding: 0 20px;

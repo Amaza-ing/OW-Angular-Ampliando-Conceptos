@@ -1,4 +1,5 @@
 .recommendation-list {
+  color: black;
   border: 2px solid black;
   padding: 10px;
   display: flex;

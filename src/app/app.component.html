@@ -1,6 +1,10 @@
 <app-header></app-header>
 
-<main class="main">
+<main class="main" [ngClass]="{ dark: isDarkMode }">
+  <i class="mode-icon" (click)="toggleDarkMode()">
+    {{ isDarkMode ? "🌞" : "🌚" }}
+  </i>
+
   <app-blog></app-blog>
 
   <aside>
