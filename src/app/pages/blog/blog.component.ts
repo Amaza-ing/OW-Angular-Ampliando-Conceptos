@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ArticleCardComponent } from '../article-card/article-card.component';
 import { ArticleService } from '../../services/article.service';
+import { ArticleCardComponent } from '../../components/article-card/article-card.component';
 import {
   NgStyle,
   NgSwitch,
