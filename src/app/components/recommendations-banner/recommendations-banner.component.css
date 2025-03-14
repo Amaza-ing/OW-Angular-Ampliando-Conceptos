@@ -1,0 +1,9 @@
+.recommendation-list {
+  border: 2px solid black;
+  display: flex;
+  gap: 20px;
+
+  .recommendation {
+    border: 2px dashed orange ;
+  }
+}
