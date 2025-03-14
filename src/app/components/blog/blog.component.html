@@ -1,3 +1,9 @@
 <h2>Bienvenidos a este Blog</h2>
 
-<app-article-card></app-article-card>
+<ul class="article-list">
+  @for (article of articles; track article.id) {
+  <li>
+    <app-article-card [article]="article"></app-article-card>
+  </li>
+  }
+</ul>
