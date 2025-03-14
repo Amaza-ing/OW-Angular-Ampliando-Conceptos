@@ -1,5 +1,7 @@
 <h2>Artículos recomendados</h2>
 
 <ul class="recommendation-list">
-  <li class="recommendation"></li>
+  @for (article of articleService.articles; track article.id) {
+  <li class="recommendation">{{ article.title }}</li>
+  }
 </ul>
