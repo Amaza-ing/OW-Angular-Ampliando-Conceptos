@@ -29,4 +29,9 @@ export class BlogComponent {
       author: 'carlos@email.com',
     },
   ];
+
+  deleteArticle(id: number) {
+    const index = this.articles.findIndex((article) => article.id === id);
+    this.articles.splice(index, 1);
+  }
 }
