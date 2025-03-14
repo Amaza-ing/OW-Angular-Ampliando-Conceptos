@@ -1,16 +1,28 @@
 import { Component } from '@angular/core';
 import { ArticleCardComponent } from '../article-card/article-card.component';
 import { ArticleService } from '../../services/article.service';
-import { NgStyle } from '@angular/common';
+import {
+  NgStyle,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault,
+} from '@angular/common';
 
 @Component({
   selector: 'app-blog',
-  imports: [ArticleCardComponent, NgStyle],
+  imports: [
+    ArticleCardComponent,
+    NgStyle,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+  ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css',
 })
 export class BlogComponent {
   titleSize = 30;
+  weekDay = new Date().getDay();
 
   constructor(public articleService: ArticleService) {}
 

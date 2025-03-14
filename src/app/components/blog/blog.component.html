@@ -4,6 +4,15 @@
   <button (click)="changeTitleSize(1)">+</button>
 </h2>
 
+<div [ngSwitch]="weekDay">
+  <p *ngSwitchCase="1">Ánimo con el inicio de semana!</p>
+  <p *ngSwitchCase="2">Ya es martes!</p>
+  <p *ngSwitchCase="3">Queda la mitad de la semana!</p>
+  <p *ngSwitchCase="4">Casi se siente el fin de semana!</p>
+  <p *ngSwitchCase="5">Por fin es viernes!</p>
+  <p *ngSwitchDefault>A desconectar el finde!</p>
+</div>
+
 <ul class="article-list">
   @for (article of articleService.articles; track article.id) {
   <li>
