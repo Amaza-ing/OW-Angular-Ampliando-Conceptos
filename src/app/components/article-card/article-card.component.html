@@ -1,5 +1,10 @@
+@let article = this.article();
+
 <article class="article-card">
   @if (article) {
+  <i class="fav-icon" (click)="toggleFavorite()">
+    {{ isFavorite() ? "🟡" : "⚪" }}
+  </i>
   <h3>{{ article.title }}</h3>
   <p>{{ article.body }}</p>
   <div class="bottom">

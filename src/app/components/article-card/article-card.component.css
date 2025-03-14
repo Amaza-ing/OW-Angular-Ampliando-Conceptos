@@ -4,6 +4,15 @@
   border: 1px solid black;
   margin-top: 20px;
   padding: 0 20px;
+  position: relative;
+
+  .fav-icon {
+    font-style: normal;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
 
   .bottom {
     display: flex;
