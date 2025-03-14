@@ -26,13 +26,6 @@ export class BlogComponent {
 
   constructor(public articleService: ArticleService) {}
 
-  deleteArticle(id: number) {
-    const index = this.articleService.articles.findIndex(
-      (article) => article.id === id
-    );
-    this.articleService.articles.splice(index, 1);
-  }
-
   changeTitleSize(value: number) {
     this.titleSize += value;
 

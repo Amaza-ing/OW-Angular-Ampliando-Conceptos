@@ -18,6 +18,16 @@ export class ArticleDetailsComponent {
     public articleService: ArticleService
   ) {
     this.articleId = route.snapshot.paramMap.get('id');
-    this.selectedArticle = articleService.selectArticle(this.articleId as string);
+    this.selectedArticle = articleService.selectArticle(
+      this.articleId as string
+    );
+  }
+
+  deleteArticle() {
+    if (this.selectedArticle)
+      this.articleService.deleteArticle(this.selectedArticle.id);
+    this.selectedArticle = this.articleService.selectArticle(
+      this.articleId as string
+    );
   }
 }

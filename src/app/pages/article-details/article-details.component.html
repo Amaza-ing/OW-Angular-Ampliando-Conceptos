@@ -1,5 +1,8 @@
 @if (selectedArticle) {
-<app-article-card [article]="selectedArticle"></app-article-card>
+<app-article-card
+  [article]="selectedArticle"
+  (deleteCard)="deleteArticle()"
+></app-article-card>
 } @else {
 <h2>No existe el artículo que busca</h2>
 }

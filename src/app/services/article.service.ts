@@ -26,6 +26,11 @@ export class ArticleService {
     },
   ];
 
+  deleteArticle(id: number) {
+    const index = this.articles.findIndex((article) => article.id === id);
+    if (index >= 0) this.articles.splice(index, 1);
+  }
+
   selectArticle(id: string) {
     return this.articles.find((article) => article.id === Number(id));
   }
