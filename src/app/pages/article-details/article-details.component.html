@@ -1,1 +1,5 @@
-<h2>Artículo con Id: {{ articleId }}</h2>
+@if (selectedArticle) {
+<app-article-card [article]="selectedArticle"></app-article-card>
+} @else {
+<h2>No existe el artículo que busca</h2>
+}

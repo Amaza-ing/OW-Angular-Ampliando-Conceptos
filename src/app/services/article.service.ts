@@ -25,4 +25,8 @@ export class ArticleService {
       author: 'carlos@email.com',
     },
   ];
+
+  selectArticle(id: string) {
+    return this.articles.find((article) => article.id === Number(id));
+  }
 }
