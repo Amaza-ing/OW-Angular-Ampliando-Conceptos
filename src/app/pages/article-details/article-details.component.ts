@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../services/article.service';
 import { ArticleCardComponent } from '../../components/article-card/article-card.component';
@@ -9,7 +9,7 @@ import { ArticleCardComponent } from '../../components/article-card/article-card
   templateUrl: './article-details.component.html',
   styleUrl: './article-details.component.css',
 })
-export class ArticleDetailsComponent {
+export class ArticleDetailsComponent implements OnInit {
   articleId;
   selectedArticle;
 
@@ -21,6 +21,15 @@ export class ArticleDetailsComponent {
     this.selectedArticle = articleService.selectArticle(
       this.articleId as string
     );
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.articleId = this.route.snapshot.paramMap.get('id');
+      this.selectedArticle = this.articleService.selectArticle(
+        this.articleId as string
+      );
+    });
   }
 
   deleteArticle() {

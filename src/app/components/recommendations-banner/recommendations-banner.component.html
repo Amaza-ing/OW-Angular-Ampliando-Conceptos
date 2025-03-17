@@ -2,6 +2,8 @@
 
 <ul class="recommendation-list">
   @for (article of articleService.articles; track article.id) {
-  <li class="recommendation">{{ article.title }}</li>
+  <li class="recommendation">
+    <a class="link" [routerLink]="['/blog', article.id]">{{ article.title }}</a>
+  </li>
   }
 </ul>
