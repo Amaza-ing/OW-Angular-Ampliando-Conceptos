@@ -18,7 +18,9 @@
   </fieldset>
   @if (articleForm.controls["body"].invalid &&
   articleForm.controls["body"].touched) {
-  <p class="error-msg">El cuerpo del artículo no puede estar vacío</p>
+  <p class="error-msg">
+    El cuerpo del artículo no puede estar vacío ni incluir palabras prohibidas
+  </p>
   }
 
   <fieldset>

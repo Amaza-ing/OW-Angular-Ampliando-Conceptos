@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Article } from '../../models/Article';
 import { ArticleService } from '../../services/article.service';
+import { forbiddenWords } from '../../utils/CustomValidators';
 
 @Component({
   selector: 'app-article-form',
@@ -12,7 +13,7 @@ import { ArticleService } from '../../services/article.service';
 export class ArticleFormComponent {
   articleForm = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    body: new FormControl('', Validators.required),
+    body: new FormControl('', [Validators.required, forbiddenWords]),
     author: new FormControl('', [Validators.required, Validators.email]),
   });
 
