@@ -3,7 +3,9 @@
 <ul class="recommendation-list">
   @for (article of articleService.articles; track article.id) {
   <li class="recommendation">
-    <a class="link" [routerLink]="['/blog', article.id]">{{ article.title }}</a>
+    <a class="link" [routerLink]="['/blog', article.id]" mat-flat-button>
+      {{ article.title }}
+    </a>
   </li>
   }
 </ul>
