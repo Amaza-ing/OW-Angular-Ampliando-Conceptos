@@ -1,4 +1,9 @@
 form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* form {
   background-color: lightgray;
   color: black;
   width: 500px;
@@ -26,4 +31,4 @@ form {
     color: red;
     font-size: 0.8rem;
   }
-}
+} */

@@ -1,36 +1,40 @@
 <h2>Crea un nuevo Artículo</h2>
 
 <form [formGroup]="articleForm" (ngSubmit)="handleSubmit()">
-  <fieldset>
-    <label for="title">Título: </label>
-    <input type="text" id="title" formControlName="title" />
-  </fieldset>
-  @if (articleForm.controls["title"].invalid &&
-  articleForm.controls["title"].touched) {
-  <p class="error-msg">
-    El título es obligatorio y debe tener más de 4 caracteres
-  </p>
-  }
+  <mat-form-field>
+    <mat-label for="title">Título: </mat-label>
+    <input matInput type="text" id="title" formControlName="title" />
+    @if (articleForm.controls["title"].invalid &&
+    articleForm.controls["title"].touched) {
+    <mat-error>
+      El título es obligatorio y debe tener más de 4 caracteres
+    </mat-error>
+    }
+  </mat-form-field>
 
-  <fieldset>
-    <label for="body">Cuerpo del artículo: </label>
-    <input type="text" id="body" formControlName="body" />
-  </fieldset>
-  @if (articleForm.controls["body"].invalid &&
-  articleForm.controls["body"].touched) {
-  <p class="error-msg">
-    El cuerpo del artículo no puede estar vacío ni incluir palabras prohibidas
-  </p>
-  }
+  <mat-form-field>
+    <mat-label for="body">Cuerpo del artículo: </mat-label>
+    <input matInput type="text" id="body" formControlName="body" />
+    @if (articleForm.controls["body"].invalid &&
+    articleForm.controls["body"].touched) {
+    <mat-error class="error-msg">
+      El cuerpo del artículo no puede estar vacío ni incluir palabras prohibidas
+    </mat-error>
+    }
+  </mat-form-field>
 
-  <fieldset>
-    <label for="author">Autor: </label>
-    <input type="text" id="author" formControlName="author" />
-  </fieldset>
-  @if (articleForm.controls["author"].invalid &&
-  articleForm.controls["author"].touched) {
-  <p class="error-msg">El autor es obligatorio y debe ser un email</p>
-  }
+  <mat-form-field>
+    <mat-label for="author">Autor: </mat-label>
+    <input matInput type="text" id="author" formControlName="author" />
+    @if (articleForm.controls["author"].invalid &&
+    articleForm.controls["author"].touched) {
+    <mat-error class="error-msg">
+      El autor es obligatorio y debe ser un email
+    </mat-error>
+    }
+  </mat-form-field>
 
-  <button [disabled]="articleForm.invalid">Crear Artículo</button>
+  <button mat-stroked-button [disabled]="articleForm.invalid">
+    Crear Artículo
+  </button>
 </form>

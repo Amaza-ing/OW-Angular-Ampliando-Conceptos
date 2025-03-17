@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Article } from '../../models/Article';
 import { ArticleService } from '../../services/article.service';
 import { forbiddenWords } from '../../utils/CustomValidators';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-article-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInput, MatButtonModule],
   templateUrl: './article-form.component.html',
   styleUrl: './article-form.component.css',
 })
