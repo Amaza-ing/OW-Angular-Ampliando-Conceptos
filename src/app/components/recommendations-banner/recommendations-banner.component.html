@@ -1,11 +1,16 @@
-<h2>Artículos recomendados</h2>
-
-<ul class="recommendation-list">
-  @for (article of articleService.articles; track article.id) {
-  <li class="recommendation">
-    <a class="link" [routerLink]="['/blog', article.id]" mat-flat-button>
-      {{ article.title }}
-    </a>
-  </li>
-  }
-</ul>
+<mat-card class="recommendations-card">
+  <mat-card-header>
+    <mat-card-title>Artículos recomendados</mat-card-title>
+  </mat-card-header>
+  <mat-card-footer>
+    <ul class="recommendation-list">
+      @for (article of articleService.articles; track article.id) {
+      <li class="recommendation">
+        <a class="link" [routerLink]="['/blog', article.id]" mat-flat-button>
+          {{ article.title }}
+        </a>
+      </li>
+      }
+    </ul>
+  </mat-card-footer>
+</mat-card>
