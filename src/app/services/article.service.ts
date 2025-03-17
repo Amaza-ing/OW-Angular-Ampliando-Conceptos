@@ -26,6 +26,10 @@ export class ArticleService {
     },
   ];
 
+  addArticle(newArticle: Article) {
+    this.articles.push(newArticle);
+  }
+
   deleteArticle(id: number) {
     const index = this.articles.findIndex((article) => article.id === id);
     if (index >= 0) this.articles.splice(index, 1);

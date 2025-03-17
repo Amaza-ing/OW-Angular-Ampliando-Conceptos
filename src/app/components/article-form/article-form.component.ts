@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Article } from '../../models/Article';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-form',
@@ -14,9 +16,17 @@ export class ArticleFormComponent {
     author: new FormControl(''),
   });
 
+  constructor(public articleService: ArticleService) {}
+
   handleSubmit() {
-    console.log(this.articleForm.value);
-    
+    const newArticle: Article = {
+      ...(this.articleForm.value as Article),
+      id: this.articleService.articles.length + 1,
+    };
+    console.log(newArticle);
+
+    this.articleService.addArticle(newArticle);
+
     this.articleForm.reset();
   }
 }
