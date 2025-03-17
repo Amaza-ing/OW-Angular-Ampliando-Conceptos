@@ -21,4 +21,9 @@ form {
     width: 200px;
     height: 40px;
   }
+
+  .error-msg {
+    color: red;
+    font-size: 0.8rem;
+  }
 }

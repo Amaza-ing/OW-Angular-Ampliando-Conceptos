@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Article } from '../../models/Article';
 import { ArticleService } from '../../services/article.service';
 
@@ -11,9 +11,9 @@ import { ArticleService } from '../../services/article.service';
 })
 export class ArticleFormComponent {
   articleForm = new FormGroup({
-    title: new FormControl(''),
-    body: new FormControl(''),
-    author: new FormControl(''),
+    title: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    body: new FormControl('', Validators.required),
+    author: new FormControl('', [Validators.required, Validators.email]),
   });
 
   constructor(public articleService: ArticleService) {}

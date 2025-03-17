@@ -5,16 +5,30 @@
     <label for="title">Título: </label>
     <input type="text" id="title" formControlName="title" />
   </fieldset>
+  @if (articleForm.controls["title"].invalid &&
+  articleForm.controls["title"].touched) {
+  <p class="error-msg">
+    El título es obligatorio y debe tener más de 4 caracteres
+  </p>
+  }
 
   <fieldset>
     <label for="body">Cuerpo del artículo: </label>
     <input type="text" id="body" formControlName="body" />
   </fieldset>
+  @if (articleForm.controls["body"].invalid &&
+  articleForm.controls["body"].touched) {
+  <p class="error-msg">El cuerpo del artículo no puede estar vacío</p>
+  }
 
   <fieldset>
     <label for="author">Autor: </label>
     <input type="text" id="author" formControlName="author" />
   </fieldset>
+  @if (articleForm.controls["author"].invalid &&
+  articleForm.controls["author"].touched) {
+  <p class="error-msg">El autor es obligatorio y debe ser un email</p>
+  }
 
-  <button>Crear Artículo</button>
+  <button [disabled]="articleForm.invalid">Crear Artículo</button>
 </form>
