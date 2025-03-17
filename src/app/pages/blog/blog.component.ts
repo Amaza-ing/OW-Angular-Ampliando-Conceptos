@@ -7,6 +7,7 @@ import {
   NgSwitchCase,
   NgSwitchDefault,
 } from '@angular/common';
+import { ArticleFormComponent } from "../../components/article-form/article-form.component";
 
 @Component({
   selector: 'app-blog',
@@ -16,7 +17,8 @@ import {
     NgSwitch,
     NgSwitchCase,
     NgSwitchDefault,
-  ],
+    ArticleFormComponent
+],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css',
 })
